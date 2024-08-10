@@ -1,0 +1,107 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Navigation Section */
+
+nav{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 90;
+    box-shadow: 0 0 4px 0;
+    padding: 15px 30px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    background-color: white;
+}
+
+.close{
+    display: none;
+}
+.name{
+    display: flex;
+}
+.name i{
+    color: rgb(46, 242, 46);
+    font-size: 2.5em;
+    display: none;
+}
+.name h1{
+    color: rgb(46, 242, 46);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2em;
+}
+ul{
+    width: 100%;
+    display: grid;
+    display: flex;
+    gap: 20px;
+    padding-top: 10px;
+}
+
+ nav ul li, a{
+    font-size: 20px;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+}
+.menu{
+    display: none;
+}
+
+
+
+.icons{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.icons a{
+    font-size: 2em;
+    color: rgb(20, 224, 20);
+}
+
+#icon{
+    border: 1px solid rgb(250, 120, 140);
+    font-size: large;
+    border-radius: 50%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+}
+#icon a{
+    font-size: 2em;
+    color: rgb(20, 224, 20);
+}
+
+ul li .drop_down li{
+    background-color: aliceblue;
+    display: inline-block;
+    display: grid;
+    position: relative;
+    z-index: .7;
+    width: 100%;
+} 
+ul li .drop_down{
+    display: none;
+    position: absolute;
+    border-radius: 30px;
+}
+ul li:hover ul.drop_down{
+    border-radius: 20px;
+    width: auto;
+    display: block;
+    line-height: 30px;
+}
+
+ul a:focus{
+    color: rgb(30, 227, 30);
+    display: inline-block;
+}
