@@ -5,6 +5,39 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+
+/* Animation */
+div{
+    transition: 1s;
+}
+
+.section7 .animate{
+    transform: translateX(-60%);
+}
+.section7 .show-animation{
+    transform: translateX(0);
+}
+.animateMotion{
+    overflow-x: hidden;
+}
+.animateMotion .animate{
+    transform: translateX(80%);
+}
+.animateMotion .show-animation{
+    transform: translateX(0);
+}
+.soap .animate{
+    transform: scale(.7);
+}
+.soap .show-animation{
+    transform: scale(1);
+}   
+.box .animate{
+    transform: scale(.7);
+}
+.box .show-animation{
+    transform: scale(1);
+}   
 /* Navigation Section */
 
 nav{
@@ -12,9 +45,9 @@ nav{
     top: 0;
     bottom: 0;
     width: 100%;
-    z-index: 90;
+    z-index: 50;
     box-shadow: 0 0 4px 0;
-    padding: 15px 30px;
+    padding: 20px 20px;
     display: grid;
     gap: 10px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -39,9 +72,10 @@ nav{
 }
 ul{
     width: 100%;
-    display: grid;
+    /* display: grid; */
     display: flex;
-    gap: 20px;
+    justify-content: flex-end;
+    gap: 30px;
     padding-top: 10px;
 }
 
@@ -50,6 +84,9 @@ ul{
     list-style: none;
     text-decoration: none;
     color: black;
+}
+#Menu{
+    padding-right: 25px;
 }
 .menu{
     display: none;
@@ -62,31 +99,18 @@ ul{
     justify-content: center;
     gap: 10px;
 }
-
+.icons i{
+    background-color: rgb(20, 224, 20);
+    height: 55px;
+    place-content: center;
+    border-radius: 50%;
+    text-align: center;
+    width: 55px;
+}
 .icons a{
-    font-size: 2em;
-    color: rgb(20, 224, 20);
-}
-
-
-ul li .drop_down li{
-    background-color: aliceblue;
-    display: inline-block;
-    display: grid;
     position: relative;
-    z-index: .7;
-    width: 100%;
-} 
-ul li .drop_down{
-    display: none;
-    position: absolute;
-    border-radius: 30px;
-}
-ul li:hover ul.drop_down{
-    border-radius: 20px;
-    width: auto;
-    display: block;
-    line-height: 30px;
+    font-size: 2em;
+    color: white;
 }
 
 ul a:focus{
@@ -97,21 +121,22 @@ ul a:focus{
 
 /* section_1 */
 .section1{
-    padding: 20px 30px;
-    margin-top: 40px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding: 20px 20px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
     gap: 60px;
 }
 .main{
     background-color: rgb(36, 226, 36);
     padding: 50px 0;
+    height: 90vh;
 }
 
 .section_1{
     line-height: 45px;
 }
-.section_1 b{
+.section_1 h1{
     color:  #fff;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 3em;
@@ -141,27 +166,28 @@ ul a:focus{
 }
 .section_1 button{
     z-index: 40;
-    background-color: rgb(43, 212, 43);
+    background-color: orange;
     border-radius: 30px;
     color: white;
     padding: 15px 10px;
     padding-bottom: 16px;
     border: 1px solid orange;
     font-size: 1.5em;
-    position: absolute;
-    left: 302px;
+    position: relative;
+    right: 70px;
     margin-top: 20px;
 }
-.section_1 button:hover{
-    background-color: orange;
-}
+#searchResult{
+    margin: 0;
 
+}
 .slides{
     box-shadow: 0 0 12px 0 whitesmoke;
 }
 .slides img{
+    background-color: rgb(16, 204, 204);
     border-radius: 7px;
-    width: 500px;
+    width: 600px;
     height: 350px;
     display: block;
     object-fit: fill; 
@@ -169,6 +195,23 @@ ul a:focus{
 .slider{
     display: grid;
     justify-content: center;
+}
+
+.contactBox i{
+    background-color: green;
+    color: white;
+    height: 60px;
+    border-radius: 100%;
+    text-align: center;
+    place-content: center;
+    width: 60px;
+    position: fixed;
+    top: 90vh;
+    right: 15px;
+    z-index: 20;
+}
+.call{
+    display: none;
 }
 /* Section2 part */
 .icon{
@@ -251,19 +294,30 @@ ul a:focus{
        
     }
 
-    .fruit{
+    .soap{
         background-color: white;
         width: 100%;
         border: 2px solid orange;
-        /* height: auto; */
         border-top-left-radius: 15px;
         border-top-right-radius: 15px;
-        transition: 1s ease-in-out;
+        transition: 1s ease-in;
     }
-    .fruit:hover{
-        box-shadow:    0 0 35px 0 gray;
+    #prod_1:active{
+        background-color: orange;
+        color: white;
     }
-    .fruit .fruit_img img{
+    #product_2:active{
+        background-color: orange;
+        color: white;
+    }
+    #products_3:active{
+        background-color: orange;
+        color: white;
+    }
+    .soap:hover{
+        box-shadow:   0 0  15px  black;
+    }
+    .soap .soap_img img{
         background-color: white ;
         margin: 20px 0;
         width: 200px;
@@ -271,31 +325,58 @@ ul a:focus{
         display: block;
         transition-duration: 1s;
     }
-    .fruit .fruit_img{
-        border-bottom: 1px solid gray;
+    .soap .soap_img{
+        border-bottom: 1px solid orange;
         width: 100%;
         display: grid;
         justify-content: center;
         transition-duration:  2s ;
     }
 
-    .fruit .fruit_img:hover img{ 
+    .soap .soap_img:hover img{ 
         transform: scale(1.1);
     }
-    .fruit_box{
-        padding: 0 10px ;
-        height: 150px;
+    .soap_box{
+        display: grid;
+        text-align: center;
+        justify-content: center;
+        padding: 15px 10px;
+        line-height: 30px;
         color: gray;
-        font-size: 1.4em;
+        font-size: 1em;
     }
-    .fruit_box h3{
+    .soap_box h3{
         color: rgb(66, 65, 65);
         text-align: center;
-        margin: 20px 0;
+        margin: 10px 0;
+        font-size: 2em;
     }
     .check{
+        padding: 10px 20px;
+        gap: 20px;
+        border-radius: 10px;
+        align-items: center;
+        display: flex;
+        border: 1px solid #1d1d1d;
+        margin: 10px 0;
         text-align: center;
+        box-shadow: 0 5px 10px #1d1d1d38;
     }
+    .check button{
+        background-color: orange;
+        border-radius: 10px;
+        border: none;
+        padding: 7px 8px;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+        transition: 1s;
+    }
+    .check button:hover{
+        background-color: rgb(43, 212, 43);
+        color: white;
+    }
+    
     
     /* Secition 4 */
     .section4{
@@ -405,7 +486,6 @@ ul a:focus{
     .section5{
         margin: 120px 0;
         padding: 90px;
-        /* height: 90vh; */
         background-color: orange;
     }
 
@@ -460,13 +540,13 @@ ul a:focus{
         color: #1d1d1d;
       }
       .section6 p{
-        font-size: 2em;
+        font-size: 1.5em;
         color: rgb(89, 88, 88);
         font-weight: 900;
       }
       .section6_box{
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
         gap: 30px;
         padding: 40px 0;
       }
@@ -474,13 +554,13 @@ ul a:focus{
         background-color: rgb(228, 228, 228);
         border-radius: 25px;
         display: flex;
+        justify-content: center;
         padding: 20px;
       }
-    
       .img_box img{
         background-color: #fff;
-        width: 220px;
-        height: 220px;
+        width: 200px;
+        height: 200px;
         border-radius: 50%;
         padding: 7px;
         transition-duration: 2s;
@@ -488,9 +568,9 @@ ul a:focus{
      .img_box img:hover{
         transform: scale(.9);
       }
+    
     .box_txt button{
         border: 1px solid orange;
-        margin-top: 20px;
         font-size: 16px;
         font-weight: 600;
         padding: 10px 21px;
@@ -502,6 +582,10 @@ ul a:focus{
         background-color: orange;
         color: white;
     }
+    #none{
+        position: relative;
+        top: 10px;
+    }
 
 
     /* Section 7*/
@@ -512,7 +596,7 @@ ul a:focus{
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 30px;
-        margin: 40px 30px;
+        margin: 40px 10px;
         margin-bottom: 90px;
     }
     .progress{
@@ -548,6 +632,7 @@ ul a:focus{
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 40px;
+        justify-content: center;
     }
     .foot_end h1{
         font-weight: 800;
@@ -571,16 +656,43 @@ ul a:focus{
         padding: 15px 15px;
         border-radius: 30px;
         font-size: 20px;
-        position: relative;
-        right: 50px;
+        margin: 10px;
+    }
+    .foot_endIcon{
+        display: flex;
+        justify-content: space-around;
+        color: white;
+    }
+    .foot_endIcon i{
+        background-color: rgb(44, 238, 44);
+        width: 50px;
+        text-align: center;
+        font-size: 1em;
+        height: 50px;
+        place-content: center;
+        border-radius: 50%;
+    }
+    .foot_endIcon a{
+        color: white;
+    }
+    footer{
+        text-align: center;
+        color: white;
+        background-color:  rgb(79, 91, 105);
+        padding: 15px 0;
     }
 
-
-/* @media screen and (max-width: 500px) */
-@media (width > 500px) and (width <= 764px){
+    @media (width > 300px) and (width <= 600px){
     .section1 {
         display: flex;
         flex-direction: column;
+        justify-content: center;
+    }
+    .section1 h1 {
+        font-size: 2em;
+    }
+    .section1 h2{
+        font-size: 1.5em;
     }
     #menu ul{
         display: flex;
@@ -590,41 +702,83 @@ ul a:focus{
     .menu{
         display: none;
     }
+    .main{
+        background-color: rgb(36, 226, 36);
+        padding: 50px 0;
+        height: fit-content;
+    }
     .main_menu{
         display: none;
     }
 
+    .input{
+        display: flex;
+        justify-content: center;
+    }
     .section_1 input{
-    width: 380px;
+        padding: 6px;
+        width: 100%;
     }
 
-    .section_1 button{
-    position: relative;
-    left: -97px;
-    padding-left: 10px;
-    }
     #icons{
         display: none;
     }
     .name {
         display: flex;
         justify-content: space-between;
-        gap: 200px;
     }
     .name i{
         display: block;
     }
+    .slides{
+        width: 100%;
+    }
     .slides img{
-        width: 460px;
+        width: 305px;
+        height: 250px;
     }
     #nav{
         display: block;
     }
-}
-@media (width > 720px) and (width <= 958px){
+    .section6_box{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .img_box img{
+        width: 170px;
+        height: 170px;
+    }
+    .section6 h1{
+        font-size: 2.5em;
+    }
+    .foot_end input{
+        width: 100%;
+    }
+    .section_box{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .section3{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .section4{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 
+    .section7{
+        display: grid;
+        justify-content: center;
+    }
+}
+@media (width >= 600px ) and ( width <= 720px){
     .slides img{
-        width: 480px;
+        width: 400px;
     }
     .slider{
         display: grid;
@@ -643,6 +797,11 @@ ul a:focus{
     .menu{
         display: none;
     }
+    .main{
+        background-color: rgb(36, 226, 36);
+        padding: 50px 0;
+        height: fit-content;
+    }
     .main_menu{
         display: none;
     }
@@ -651,11 +810,11 @@ ul a:focus{
         width: 380px;
     }
 
-    .section_1 button{
+    /* .section_1 button{
         position: relative;
         left: -97px;
         padding-left: 10px;
-    }
+    } */
     #icons{
         display: none;
     }
@@ -671,13 +830,53 @@ ul a:focus{
         display: block;
     }
 }
-/* @media (width > 768px) and (width <= 964px){ */
-    /* @media (width > 720px) and (width <= 958px){
-        .menu{
-            display: none;
-        }
-        #nav{
-            display: block;
-        }
-} */
+@media (width > 720px) and (width <= 1100px){
+    .slides img{
+        width: 600px;
+    }
+    
+    .slider{
+        display: grid;
+        justify-content: center;
+    }
 
+    .section1 {
+        display: flex;
+        flex-direction: column;
+    }
+    #menu ul{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menu{
+        display: none;
+    }
+    .main{
+        background-color: rgb(36, 226, 36);
+        padding: 50px 0;
+        height: fit-content;
+    }
+    .main_menu{
+        display: none;
+    }
+
+    .section_1 input{
+        width: 380px;
+    }
+
+    #icons{
+        display: none;
+    }
+    .name {
+        display: flex;
+        justify-content: space-between;
+        gap: 200px;
+    }
+    .name i{
+        display: block;
+    }
+    #nav{
+        display: block;
+    }
+}
